@@ -3,8 +3,12 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+
+
 /* 전역변수 */
 const memberRouter = require('./routes/member');
+const sqlRouter = require('./routes/sql');
+
 
 /* 서버구동 */
 app.listen(3000, () => {console.log('http://127.0.0.1:3000')});
@@ -23,3 +27,4 @@ app.use(express.urlencoded({extended: false}));
 app.use('/', express.static(path.join(__dirname, './public'))); //절대경로로 넣어주기
 app.use('/storage', express.static(path.join(__dirname, './uploads'))); //파일
 app.use('/member', memberRouter);
+app.use('/sql', sqlRouter);
