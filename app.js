@@ -8,6 +8,7 @@ const path = require('path');
 /* 전역변수 */
 const memberRouter = require('./routes/member');
 const sqlRouter = require('./routes/sql');
+const sqlRouter2 = require('./routes/sql2');
 
 
 /* 서버구동 */
@@ -28,3 +29,4 @@ app.use('/', express.static(path.join(__dirname, './public'))); //절대경로�
 app.use('/storage', express.static(path.join(__dirname, './uploads'))); //파일
 app.use('/member', memberRouter);
 app.use('/sql', sqlRouter);
+app.use('/sql2', sqlRouter2);
