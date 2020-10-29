@@ -3,12 +3,11 @@ const router = express.Router();
 
 /** mysql **/
 const mysql      = require('mysql');
- connection = mysql.createConnection({
-	host: 'localhost',
-	user: 'jiminp0421',
-	port: 3306,
-	password: '000000', //깃에올라가면 패스워드가 그대로노출되니까 깃에 올리는 법 알려줄게..
-	database: 'jiminp0421'
+const connection = mysql.createConnection({
+	host: process.env.DB_HOST,
+	user: process.env.DB_USER,
+	database: process.env.DB_DATABASE,
+	password: process.env.DB_PASS,
 });
 
 router.get('/create', (req, res, next) => {
