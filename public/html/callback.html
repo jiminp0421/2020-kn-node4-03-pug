@@ -1,0 +1,9 @@
+<script>
+	 function callbackSum(a, b, fn) { //3번째로 받는 인자가 콜백함수
+		fn(a + b);
+	 }
+
+	 callbackSum(10, 20, function(result){ //인자명(a+b) 넣어주기
+		console.log("두 변수의 합은" + result + "입니다.");
+	 });
+</script>
